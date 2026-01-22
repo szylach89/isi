@@ -1,0 +1,233 @@
+<h1
+id="pomoc-do-scilaba-operacje-komendy-i-wszystko-co-znajde-co-wyda-mi-się-przydatne">Pomoc
+do scilaba (operacje, komendy i wszystko co znajde co wyda mi się
+przydatne)</h1>
+<h3 id="podstawowe-operacje">Podstawowe operacje:</h3>
+<ul>
+<li>A + B</li>
+<li>A - B</li>
+<li>A * B</li>
+<li>A / B</li>
+<li>2 ^ 2 lub 2 ** 2</li>
+<li>sqrt(2)</li>
+<li>modulo(x, d)</li>
+</ul>
+<h3 id="wbudowane-zmienne">Wbudowane zmienne:</h3>
+<ul>
+<li>%pi</li>
+<li>%e</li>
+<li>%i</li>
+<li>%eps</li>
+<li>%inf</li>
+<li>%nan</li>
+<li>%T</li>
+</ul>
+<dl>
+<dt>Średnik (;):</dt>
+<dd>
+Średnik pomija wyświetlanie wyniku polecenia
+</dd>
+</dl>
+<h3 id="inne-polecenia">Inne polecenia:</h3>
+<ul>
+<li>help - wyświetla dokumentacje</li>
+<li>apropos <em>text</em> - wyswietla strony dokumentacji zawierających
+<em>text</em></li>
+<li>what - wyświetla dostępne funkcje</li>
+<li>clear - czyści przestrzeń roboczą, usuwa wszystkie zmienne</li>
+<li>clc - czyści okno poleceć</li>
+<li>clf czyści okno graficzne</li>
+<li>resethistory - czyści historię poleceń</li>
+</ul>
+<h2 id="macierze-i-wektory">Macierze i wektory</h2>
+<dl>
+<dt>Wektor</dt>
+<dd>
+a=[1,2,3]
+</dd>
+<dt>Transpozycja</dt>
+<dd>
+a’
+</dd>
+<dd>
+a.’ &lt;- “<em>zwykłe</em>” transponowanie (cokolwiek to znaczy)
+</dd>
+<dt>Macierze</dt>
+<dd>
+a=[1,2,3;4,5,6]
+</dd>
+<dd>
+elementy w wierszu odzielasz przecinkiem lub spacją. Nowy wiersz
+zaczynasz pisząc średnik (;)
+</dd>
+<dt>Mnożenie macierzy</dt>
+<dd>
+a * b
+</dd>
+<dd>
+Jest spore prawdopodobieństwo że będzie trzeba transponować jedną z
+macierzy np. a*b’
+</dd>
+<dt>Inne mnożenie macierzy</dt>
+<dd>
+a .* b
+</dd>
+<dd>
+mnożenie “Element przez odpowiadający mu element”, tzn. pierwszy element
+z a * pierwszy element z b itd.
+</dd>
+<dd>
+Istnieje również <code>a ./ b</code> co jest odpowiednikiem dla
+dzielenia.
+</dd>
+</dl>
+<p>[1,2,3].*[3,2,1]</p>
+<p>Wynik powyższego działania: 3, 4, 3</p>
+<dl>
+<dt>Wektory o elementach równomiernie rozmieszczonych:</dt>
+<dd>
+<code>linspace(0, 1, 11)</code>
+</dd>
+<dd>
+0:0.1:1 &lt;- od:krok:do
+</dd>
+<dt>Odwracanie macierzy:</dt>
+<dd>
+inv(a)
+</dd>
+<dd>
+a^(-1)
+</dd>
+<dt>Wyznacznik macierzy:</dt>
+<dd>
+det(a)
+</dd>
+</dl>
+<h3 id="macierze-specjalne">Macierze specjalne:</h3>
+<ul>
+<li>eye()</li>
+<li>diag()</li>
+<li>zeros()</li>
+<li>ones()</li>
+<li>tril()</li>
+<li>triu()</li>
+</ul>
+<h3 id="operatory-relacji">Operatory relacji:</h3>
+<ul>
+<li>~=</li>
+<li>==</li>
+<li>&lt;</li>
+<li>&gt;</li>
+<li>&lt;=</li>
+<li>&gt;=</li>
+</ul>
+<dl>
+<dt><code>rand(x,y)</code></dt>
+<dd>
+Tworzy losową macierz o wymiarach x na y
+</dd>
+</dl>
+<h3 id="funkcje-matematyczne">Funkcje matematyczne:</h3>
+<ul>
+<li>sqrt()</li>
+<li>nthroot(,m) &lt;- Pierwisatek m-tego stopnia</li>
+<li>log()</li>
+<li>log10()</li>
+<li>log2()</li>
+<li>exp()</li>
+<li>abs()</li>
+<li>int()</li>
+<li>floor()</li>
+<li>ceil()</li>
+<li>round()</li>
+<li>sin()</li>
+<li>cos()</li>
+<li>tan()</li>
+<li>cotg()</li>
+</ul>
+<h2 id="wielomiany">Wielomiany</h2>
+<h4
+id="zdefiniowanie-wielomanu-zmiennej-z-o-współczynnikach-1-2-3">Zdefiniowanie
+wielomanu zmiennej <em>z</em> o współczynnikach 1, 2, 3:</h4>
+<ul>
+<li><code>w = poly([1,2,3], 'z', 'coeff')</code></li>
+</ul>
+<h4 id="pochodna-wielomanu">Pochodna wielomanu:</h4>
+<ul>
+<li>derivat(w)</li>
+</ul>
+<h4 id="wartość-wielomianu-w-punkcie-x">Wartość wielomianu w punkcie
+<em>x</em>:</h4>
+<ul>
+<li>horner(w, x)</li>
+</ul>
+<h4 id="pierwiastki-wielomanu">Pierwiastki wielomanu:</h4>
+<ul>
+<li>roots(x)</li>
+</ul>
+<h2 id="instrukcje-warunkowe">Instrukcje warunkowe</h2>
+<h3 id="if">If</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode scilab"><code class="sourceCode sci"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>if wyrazenie_logiczne, instrukcja, end;</span></code></pre></div>
+<p>Przykład: <code>if a&gt;b, a=a+5, end</code></p>
+<pre><code>if a&gt;b then
+  a=a+b
+else
+  a=a-b
+end</code></pre>
+<h3 id="if-else">If else:</h3>
+<pre><code>if wyrazenie_logiczne_1 then
+  ciag_instrukcji_1
+elseif wyrazenie_logiczne_2 then
+  ciag_instrukcji_2
+else
+  ciag_instrukcji_3
+end</code></pre>
+<h3 id="instrukcja-wyboru-select">Instrukcja wyboru (select)</h3>
+<pre><code>select identyfikator
+  case iden1
+    ciag_instrukcji_1
+  case idne2
+    ciag_instrukcji_2
+  else
+    ciag_instrukcji_3
+end</code></pre>
+<h2 id="pętle">Pętle</h2>
+<h3 id="for">For</h3>
+<pre><code>for index=pocz:krok:koniec do
+  ciag_instrukcji_1
+end</code></pre>
+<p>Ewententualnie <code>index=pocz:koniec</code> z krokiem 1.</p>
+<h3 id="while">While</h3>
+<pre><code>while wyrazenie_logiczne do
+  ciag_instrukcji
+end</code></pre>
+<p>Ta pętla może być przerwana poleceniem <code>break</code>.</p>
+<h2 id="wykresy">Wykresy</h2>
+<h3 id="funkcje">Funkcje:</h3>
+<ul>
+<li>plot()</li>
+<li>bar()</li>
+<li>fplot2d()</li>
+<li>plot2d()</li>
+<li>fplot3d()</li>
+<li>subplot()</li>
+<li>figure()</li>
+<li>histplot()</li>
+<li>legend()</li>
+<li>title()</li>
+<li>xlabel()</li>
+<li>ylabel()</li>
+<li>xgrid</li>
+<li>clf</li>
+</ul>
+<h2 id="scinotes">SciNotes</h2>
+<p>Całość z tych funkcji i operacji można wykonać albo bezpośrednio w
+scilab CLI lub użyć SciNotes. Wtedy taką sekwencje można zapisać do
+pliku i uruchomić.</p>
+<h3 id="uruchamianie">Uruchamianie</h3>
+<p>Albo używasz <code>exec</code> albo używasz przycisku na pasku w
+SciNotes</p>
+<h3 id="wyświetlanie">Wyświetlanie</h3>
+<p>Żeby coś się w konsoli pojawiło (np. wynik działania) używasz
+disp()</p>
